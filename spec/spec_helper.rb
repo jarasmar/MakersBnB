@@ -15,6 +15,8 @@ require 'capybara'
 require 'sinatra'
 require 'capybara/rspec'
 require 'rspec'
+require 'simplecov'
+require 'simplecov-console'
 
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
@@ -22,6 +24,16 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
 
 ENV['ENVIRONMENT'] = 'test'
+
+Capybara.app = MakersBnB
+
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+  SimpleCov::Formatter::Console,
+  # Want a nice code coverage website? Uncomment this next line!
+  # SimpleCov::Formatter::HTMLFormatter
+])
+SimpleCov.start
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
