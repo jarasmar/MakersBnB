@@ -6,6 +6,24 @@
   </head>
 
   <body>
+    <p> Create a new Space </p>
+    <form action="/create_space" method="post">
+        <label for="name"> Name </label>
+        <input type='text' name="name" placeholder="Name">
 
+        <label for="description"> Description </label>
+        <input type='text' name="description" placeholder="Description">
+
+        <label for="price"> Price </label>
+        <input type='text' name="price" placeholder="Price">
+
+        <label for="email"> Email </label>
+        <input type='text' name="email" placeholder="Email">
+
+        <label for="password"> Password </label>
+        <input type='text' name="password" placeholder="Password">
+
+        <input type="submit" value="Submit">
+    </form>
   </body>
 </html>

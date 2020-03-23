@@ -7,6 +7,7 @@ gem 'rspec'
 gem 'capybara'
 gem 'sinatra'
 gem 'rubocop-rails'
+gem 'sinatra-flash'
 
 
 # gem "rails"
