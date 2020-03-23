@@ -12,3 +12,24 @@ post '/create_space       -->  redirect to ./user (confirm authentication with u
 get '/book_space/:id'     -->  display book_space.erb (space, authenticate, confirm_booking_button)
 post '/book_space/:id'    -->  redirect to ./user (confirm authentication with users table in DB, change space availability in spaces table in DB)
 ```
+
+### To set up the databases ###
+
+#### database ####
+Connect to `psql` and create the `makersbnb` database:
+
+```
+CREATE DATABASE makersbnb;
+```
+
+#### Test database ####
+Connect to `psql` and create the `makersbnb_test` database:
+
+```
+CREATE DATABASE makersbnb_test;
+```
+
+To set up the appropriate tables, connect to the datatbase in `psql` and run the SQL scripts in the `db/migrations` directory in the given folder.
+
+### To run tests ###
+`rspec` from the parent directory
