@@ -9,6 +9,7 @@ gem 'sinatra'
 gem 'rubocop-rails'
 gem 'simplecov'
 gem 'simplecov-console'
+gem 'pg'
 
 
 # gem "rails"
