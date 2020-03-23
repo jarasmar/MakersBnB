@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Makers BnB</title>
+  </head>
+
+  <body>
+    <h1>Welcome <%=user.name%> to MakersBnB </h1>
+    <%# List of all spaces %>
+        <%# booking link button %>
+
+    <ul>
+    <%spaces.each do |space| %>
+    <li><%=space.name%>
+        <%=space.description%>
+        <%=space.price%>
+        <form action="/book_space/<%=space.id%>" method="get">
+            <input type='submit' value="Book">
+        </form>
+    </li>
+    <%end%>
+    </ul>
+
+    <%# create space - redirects to create space view %>
+    <form action="/create_space" method="get">
+        <input type='submit' value="Create Space">
+    </form>
+
+  </body>
+</html>
