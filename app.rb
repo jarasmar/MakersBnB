@@ -5,7 +5,7 @@ class MakersBnB < Sinatra::Base
   enable :sessions, :method_override
 
   get '/' do
-    "Hello World!"
+    "Welcome to MakersBnB!"
   end
 
 

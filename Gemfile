@@ -7,6 +7,8 @@ gem 'rspec'
 gem 'capybara'
 gem 'sinatra'
 gem 'rubocop-rails'
+gem 'simplecov'
+gem 'simplecov-console'
 
 
 # gem "rails"
