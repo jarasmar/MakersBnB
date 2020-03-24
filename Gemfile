@@ -10,7 +10,7 @@ gem 'rubocop-rails'
 gem 'sinatra-flash'
 gem 'simplecov'
 gem 'simplecov-console'
-gem 'pg'
+gem 'pg', '~> 0.18.4'
 
 
 # gem "rails"

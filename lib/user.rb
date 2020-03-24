@@ -1,4 +1,3 @@
-require_relative 'database_helpers'
 require 'pg'
 
 class User
