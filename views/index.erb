@@ -8,17 +8,17 @@
   <body>
     <h1>Welcome to MakersBnB!</h1>
 
-    <%# List of all spaces %>
-    <%# <ul>
-    <%spaces.each do |space| %>
-    <%# <li><%=space.name%>
-        <%# <%=space.description%>
-        <%# <%=space.price%>
-    <%# </li>
-    <%end%>
-    <%# </ul> %>
+    List of all spaces
+    <ul>
+    <%@spaces.each do |space| %>
+    <li><%=space['space_name']%>
+        <%=space['description']%>
+        <%=space['price']%>
+    </li>
+    <% end %>
+    </ul>
 
-    <%# create space - redirects to create space view %>
+    <!-- #create space - redirects to create space view %> -->
     <form action="/sign_up" method="get">
         <input type='submit' value="Sign Up">
     </form>

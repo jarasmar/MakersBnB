@@ -10,7 +10,12 @@ class MakersBnB < Sinatra::Base
   enable :sessions, :method_override
   register Sinatra::Flash
 
+  before do
+    @user
+  end
+
   get '/' do
+    @spaces = Space.all
     erb :index
   end
 
@@ -21,12 +26,11 @@ class MakersBnB < Sinatra::Base
   post '/sign_up' do
     # Saves into users DB (params - Name, email, username password)
     # Update parameter names when decided
-    User.create(name: params[:name], email: params[:email], password: params[:password])
+    @user = User.create(name: params[:name], email: params[:email], password: params[:password])
     redirect '/user'
   end
 
   get '/user' do
-
     erb :user
   end
 
