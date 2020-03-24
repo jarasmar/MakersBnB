@@ -2,7 +2,7 @@ def sign_up
   fill_in('name', with: 'Neha Singh')
   fill_in('email', with: 'myemail@test.com')
   fill_in('password', with: 'password')
-  click_button('Sign up')
+  click_button('Submit')
 end
 
 def clear_test_database

@@ -9,7 +9,7 @@ gem 'sinatra'
 gem 'rubocop-rails'
 gem 'simplecov'
 gem 'simplecov-console'
-gem 'pg'
+gem 'pg', '~> 0.18.4'
 gem 'sinatra-flash'
 
 
