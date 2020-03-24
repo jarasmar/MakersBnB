@@ -8,7 +8,7 @@ feature ' creating spaces' do
     fill_in('price', with: 40)
     fill_in('email', with: 'testemail@test.com')
     fill_in('password', with: 'password')
-    click_button('submit')
+    click_button('Submit')
     expect(page).to have_content 'Jara home'
   end
 end

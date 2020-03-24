@@ -21,11 +21,12 @@ class MakersBnB < Sinatra::Base
   post '/sign_up' do
     # Saves into users DB (params - Name, email, username password)
     # Update parameter names when decided
-    @@user = User.create(name: params[:name], email: params[:email], password: params[:password])
+    User.create(name: params[:name], email: params[:email], password: params[:password])
     redirect '/user'
   end
 
   get '/user' do
+
     erb :user
   end
 
@@ -43,7 +44,9 @@ class MakersBnB < Sinatra::Base
       Flash[:notice] = 'Invalid User'
     end
 
-    Space.create(space_name: params[:space_name], description: params[:description], price: params[:price], user_id: params[:user_id])
+    user_id = User.find_id(email: params[:email])
+
+    Space.create(space_name: params[:space_name], description: params[:description], price: params[:price], user_id: user_id)
     redirect '/user'
   end
 

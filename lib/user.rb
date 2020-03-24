@@ -31,6 +31,11 @@ class User
     end
   end
 
+  def self.find_id(email:)
+    result = DatabaseConnection.query("SELECT user_id FROM users WHERE email = '#{email}'")
+    return result[0]['user_id']
+  end
+
 private
 
   def self.exists(email:)

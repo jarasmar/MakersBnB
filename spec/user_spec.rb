@@ -24,7 +24,7 @@ describe User do
 
   context '.authenticate' do
 
-    it 'authenticates a user and returns true if the user exists' do
+    it 'authenticates a user and returns true if the user exists and password is correct' do
       User.create(name: "Neha Singh", email: "myemail@test.com", password: "password")
       expect(User.authenticate(email: "myemail@test.com", password: "password")).to be true
     end

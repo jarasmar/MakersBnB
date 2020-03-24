@@ -4,6 +4,6 @@ feature 'sign up' do
     click_button('Sign Up')
     sign_up
     expect(current_path).to eq '/user'
-    expect(page).to have_content("Welcome, Neha Singh!")
+    expect(page).to have_content("Welcome!")
   end
 end
