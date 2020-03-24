@@ -2,12 +2,9 @@
 
 require 'sinatra'
 require 'sinatra/flash'
-<<<<<<< HEAD
 require './lib/database_connection_setup.rb'
 require './lib/user.rb'
-=======
 require './lib/space'
->>>>>>> c5adebe66acf15a801d8a7fb54f80cd043601582
 
 class MakersBnB < Sinatra::Base
   enable :sessions, :method_override
