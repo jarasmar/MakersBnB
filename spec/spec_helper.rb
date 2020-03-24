@@ -20,12 +20,11 @@ require 'simplecov-console'
 require_relative 'web_helpers'
 
 
-require File.join(File.dirname(__FILE__), '..', 'app.rb')
-
-
-
 
 ENV['ENVIRONMENT'] = 'test'
+
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
 
 Capybara.app = MakersBnB
 

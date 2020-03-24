@@ -9,6 +9,7 @@
           1,
           1,
           1,
+          1,
           null,
           null
         ]
@@ -53,12 +54,13 @@
       "/Users/patrickoliver/Projects/Makers_Course/Group Projects/BnB/MakersBnB/lib/user.rb": {
         "lines": [
           1,
-          null,
           1,
           null,
           1,
           null,
           1,
+          null,
+          1,
           4,
           4,
           4,
@@ -66,20 +68,19 @@
           null,
           null,
           1,
-          4,
-          4,
           null,
-          0,
+          null,
+          null,
+          null,
           null,
           4,
           4,
-          null,
           null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1585046604
+    "timestamp": 1585049030
   }
 }
