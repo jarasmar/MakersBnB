@@ -5,7 +5,7 @@ feature 'show spaces' do
     create_new_space
     visit '/'
     expect(first('.space')).to have_content('Jara home')
-    expect(page).to have_content('Nice Cozy room')
-    expect(page).to have_content('40.00')
+    expect(first('.space')).to have_content('Nice Cozy room')
+    expect(first('.space')).to have_content('40.00')
   end
 end
