@@ -23,16 +23,23 @@ class User
   end
 
   def self.authenticate(email:, password:)
-    return false unless exists?(email: email)
-    result = DatabaseConnection.query("SELECT * FROM users WHERE email = '#{email}'")
-    p result[0]
-    p result[0]['password']
-    result[0]['password'] == password ? true : false
+    return false unless exists(email: email) # checks if a user with this email exists in our database
+    if correct_password(email: email, password: password) # if the password if correct it will return true, if not correct, it will return false
+      return true
+    else
+      return false
+    end
   end
 
 private
 
-  def self.exists?(email:)
-    !DatabaseConnection.query("SELECT * FROM users WHERE email = '#{email}'") == nil
+  def self.exists(email:)
+    result = DatabaseConnection.query("SELECT * FROM users WHERE email = '#{email}'")
+    return true if result.ntuples == 1 # ntuples is the number of rows returned from our query (if an entry exists we should return 1 row)
+  end
+
+  def self.correct_password(email:, password:)
+    result = DatabaseConnection.query("SELECT password FROM users WHERE email = '#{email}'")
+    result[0]['password'] == password ? true : false
   end
 end

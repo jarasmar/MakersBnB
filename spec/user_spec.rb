@@ -29,8 +29,14 @@ describe User do
       expect(User.authenticate(email: "myemail@test.com", password: "password")).to be true
     end
 
+     it 'authenticates a user and returns false if the user exists but wrong password' do
+      User.create(name: "Neha Singh", email: "myemail@test.com", password: "password")
+      expect(User.authenticate(email: "myemail@test.com", password: "12345")).to be false
+    end
+
     it 'authenticates a user and returns false if the user does not exist' do
       User.create(name: "Neha Singh", email: "myemail@test.com", password: "password")
+      p "authenticating false user"
       expect(User.authenticate(email: "email@hello.com", password: "12345")).to be false
     end
   end
