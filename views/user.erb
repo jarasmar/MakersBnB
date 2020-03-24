@@ -6,11 +6,11 @@
   </head>
 
   <body>
-    <h1>Welcome <%=user.name%> to MakersBnB </h1>
+    <h1>Welcome, <%=@@user.name%>!</h1>
     <%# List of all spaces %>
         <%# booking link button %>
 
-    <ul>
+    <!-- <ul>
     <%# <%spaces.each do |space| %> %>
     <%# <li><%=space.name%> %>
         <%# <%=space.description%> %>
@@ -19,8 +19,8 @@
             <%# <input type='submit' value="Book"> %>
         </form>
     </li>
-    <%end%>
-    </ul>
+    <%#end%>
+    </ul> -->
 
     <%# create space - redirects to create space view %>
     <form action="/create_space" method="get">

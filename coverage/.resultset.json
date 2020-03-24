@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/patrickoliver/Projects/Makers_Course/Group Projects/BnB/MakersBnB/spec/features/adding_users_spec.rb": {
+      "/Users/isabelleben/Projects/teamProjects/MakersBnB/spec/features/adding_users_spec.rb": {
         "lines": [
           1,
           1,
@@ -14,7 +14,7 @@
           null
         ]
       },
-      "/Users/patrickoliver/Projects/Makers_Course/Group Projects/BnB/MakersBnB/spec/features/testing_infrastructure_spec.rb": {
+      "/Users/isabelleben/Projects/teamProjects/MakersBnB/spec/features/testing_infrastructure_spec.rb": {
         "lines": [
           1,
           1,
@@ -24,7 +24,7 @@
           null
         ]
       },
-      "/Users/patrickoliver/Projects/Makers_Course/Group Projects/BnB/MakersBnB/spec/user_spec.rb": {
+      "/Users/isabelleben/Projects/teamProjects/MakersBnB/spec/user_spec.rb": {
         "lines": [
           1,
           null,
@@ -46,41 +46,12 @@
           1,
           1,
           null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/patrickoliver/Projects/Makers_Course/Group Projects/BnB/MakersBnB/lib/user.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          4,
-          4,
-          4,
-          4,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          4,
-          4,
           null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1585049030
+    "timestamp": 1585051616
   }
 }
