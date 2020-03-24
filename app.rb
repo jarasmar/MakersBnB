@@ -16,7 +16,7 @@ class MakersBnB < Sinatra::Base
   post '/sign_up' do
     # Saves into users DB (params - Name, email, username password)
     # Update parameter names when decided
-    User.new(name: params[:name], email: params[:email], password: params[:password])
+    User.create(name: params[:name], email: params[:email], password: params[:password])
     redirect '/user'
   end
 
@@ -36,7 +36,7 @@ class MakersBnB < Sinatra::Base
     # If user exists, create the new space, if not, throw error
     Flash[:notice] = "Invalid User" unless User.authenticate(email: params[:email], password: params[:password])
 
-    Space.new(space_name: params[:space_name], description: params[:description], price: params[:price], user_id: params[:user_id])
+    Space.create(space_name: params[:space_name], description: params[:description], price: params[:price], user_id: params[:user_id])
     redirect '/user'
   end
 
