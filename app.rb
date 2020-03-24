@@ -1,7 +1,13 @@
+# frozen_string_literal: true
+
 require 'sinatra'
 require 'sinatra/flash'
+<<<<<<< HEAD
 require './lib/database_connection_setup.rb'
 require './lib/user.rb'
+=======
+require './lib/space'
+>>>>>>> c5adebe66acf15a801d8a7fb54f80cd043601582
 
 class MakersBnB < Sinatra::Base
   enable :sessions, :method_override
@@ -27,7 +33,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/create_space' do
-    erb :'spaces/create_space'
+    erb :'spaces/create'
   end
 
   post '/create_space' do
@@ -36,7 +42,9 @@ class MakersBnB < Sinatra::Base
 
     # As we are not log_in yet, authenticate the user is registered in DB
     # If user exists, create the new space, if not, throw error
-    Flash[:notice] = "Invalid User" unless User.authenticate(email: params[:email], password: params[:password])
+    unless User.authenticate(email: params[:email], password: params[:password])
+      Flash[:notice] = 'Invalid User'
+    end
 
     Space.create(space_name: params[:space_name], description: params[:description], price: params[:price], user_id: params[:user_id])
     redirect '/user'
@@ -54,7 +62,9 @@ class MakersBnB < Sinatra::Base
 
     # As we are not log_in yet, authenticate the user is registered in DB
     # If user exists, create the new space, if not, throw error
-    Flash[:notice] = "Invalid User" unless User.authenticate(email: params[:email], password: params[:password])
+    unless User.authenticate(email: params[:email], password: params[:password])
+      Flash[:notice] = 'Invalid User'
+    end
 
     Space.book(space: params[:space_id])
     redirect '/user'
