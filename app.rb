@@ -28,7 +28,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/create_space' do
-    erb :'spaces/create_space'
+    erb :'spaces/create'
   end
 
   post '/create_space' do
