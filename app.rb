@@ -1,5 +1,7 @@
 require 'sinatra'
 require 'sinatra/flash'
+require './lib/database_connection_setup.rb'
+require './lib/user.rb'
 
 class MakersBnB < Sinatra::Base
   enable :sessions, :method_override
@@ -16,7 +18,7 @@ class MakersBnB < Sinatra::Base
   post '/sign_up' do
     # Saves into users DB (params - Name, email, username password)
     # Update parameter names when decided
-    User.create(name: params[:name], email: params[:email], password: params[:password])
+    @@user = User.create(name: params[:name], email: params[:email], password: params[:password])
     redirect '/user'
   end
 
