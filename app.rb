@@ -11,7 +11,7 @@ class MakersBnB < Sinatra::Base
   register Sinatra::Flash
 
   before do
-    @user
+    @user = User.instance
   end
 
   get '/' do

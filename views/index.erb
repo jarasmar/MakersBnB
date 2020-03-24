@@ -11,7 +11,8 @@
     List of all spaces
     <ul>
     <%@spaces.each do |space| %>
-    <li><%=space['space_name']%>
+    <li class="space">
+        <%=space['space_name']%>
         <%=space['description']%>
         <%=space['price']%>
     </li>

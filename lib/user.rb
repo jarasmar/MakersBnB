@@ -19,7 +19,7 @@ class User
     #   connection = PG.connect(dbname: 'makersbnb')
     # end
     result = DatabaseConnection.query("INSERT INTO users (name, email, password) VALUES('#{name}', '#{email}', '#{password}') RETURNING user_id, name, email, password;")
-    User.new(user_id: result[0]['user_id'], name: result[0]['name'], email: result[0]['email'], password: result[0]['password'])
+    @user = User.new(user_id: result[0]['user_id'], name: result[0]['name'], email: result[0]['email'], password: result[0]['password'])
   end
 
   def self.authenticate(email:, password:)
@@ -34,6 +34,10 @@ class User
   def self.find_id(email:)
     result = DatabaseConnection.query("SELECT user_id FROM users WHERE email = '#{email}'")
     return result[0]['user_id']
+  end
+
+  def self.instance
+    @user
   end
 
 private
