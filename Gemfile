@@ -7,10 +7,10 @@ gem 'rspec'
 gem 'capybara'
 gem 'sinatra'
 gem 'rubocop-rails'
-gem 'sinatra-flash'
 gem 'simplecov'
 gem 'simplecov-console'
 gem 'pg'
+gem 'sinatra-flash'
 
 
 # gem "rails"
