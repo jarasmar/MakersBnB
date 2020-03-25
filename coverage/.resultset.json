@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Student/Documents/workspace/MakersBnB/spec/booking_spec.rb": {
+      "/Users/patrickoliver/Projects/Makers_Course/Group Projects/BnB/MakersBnB/spec/booking_spec.rb": {
         "lines": [
           null,
           null,
@@ -15,76 +15,51 @@
           1,
           1,
           1,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
           null,
           null,
           null
         ]
       },
-      "/Users/Student/Documents/workspace/MakersBnB/lib/booking.rb": {
+      "/Users/patrickoliver/Projects/Makers_Course/Group Projects/BnB/MakersBnB/lib/booking.rb": {
         "lines": [
           null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
           null,
           1,
           1,
           1,
           1,
-          0,
-          0,
-          0,
-          0,
+          1,
           null,
           null,
           1,
           1,
+          1,
+          null,
+          null,
+          1,
           0,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
           null,
           null
         ]
       },
-      "/Users/Student/Documents/workspace/MakersBnB/spec/features/adding_space_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/Student/Documents/workspace/MakersBnB/spec/features/adding_users_spec.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/Student/Documents/workspace/MakersBnB/spec/features/showing_spaces_spec.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/Student/Documents/workspace/MakersBnB/spec/features/testing_infrastructure_spec.rb": {
+      "/Users/patrickoliver/Projects/Makers_Course/Group Projects/BnB/MakersBnB/spec/features/adding_space_spec.rb": {
         "lines": [
           null,
           null,
@@ -96,7 +71,62 @@
           null
         ]
       },
-      "/Users/Student/Documents/workspace/MakersBnB/spec/space_spec.rb": {
+      "/Users/patrickoliver/Projects/Makers_Course/Group Projects/BnB/MakersBnB/spec/features/adding_users_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/patrickoliver/Projects/Makers_Course/Group Projects/BnB/MakersBnB/spec/features/show_user_bookings_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/patrickoliver/Projects/Makers_Course/Group Projects/BnB/MakersBnB/spec/features/showing_spaces_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/patrickoliver/Projects/Makers_Course/Group Projects/BnB/MakersBnB/spec/features/testing_infrastructure_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/patrickoliver/Projects/Makers_Course/Group Projects/BnB/MakersBnB/spec/space_spec.rb": {
         "lines": [
           null,
           null,
@@ -144,7 +174,7 @@
           null
         ]
       },
-      "/Users/Student/Documents/workspace/MakersBnB/spec/user_spec.rb": {
+      "/Users/patrickoliver/Projects/Makers_Course/Group Projects/BnB/MakersBnB/spec/user_spec.rb": {
         "lines": [
           1,
           null,
@@ -192,6 +222,6 @@
         ]
       }
     },
-    "timestamp": 1585130164
+    "timestamp": 1585138801
   }
 }
