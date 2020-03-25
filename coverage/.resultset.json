@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/patrickoliver/Projects/Makers_Course/Group Projects/BnB/MakersBnB/spec/booking_spec.rb": {
+      "/Users/isabelleben/Projects/teamProjects/MakersBnB/spec/booking_spec.rb": {
         "lines": [
           null,
           null,
@@ -23,7 +23,7 @@
           null
         ]
       },
-      "/Users/patrickoliver/Projects/Makers_Course/Group Projects/BnB/MakersBnB/lib/booking.rb": {
+      "/Users/isabelleben/Projects/teamProjects/MakersBnB/lib/booking.rb": {
         "lines": [
           null,
           1,
@@ -59,7 +59,7 @@
           null
         ]
       },
-      "/Users/patrickoliver/Projects/Makers_Course/Group Projects/BnB/MakersBnB/spec/features/adding_space_spec.rb": {
+      "/Users/isabelleben/Projects/teamProjects/MakersBnB/spec/features/adding_space_spec.rb": {
         "lines": [
           null,
           null,
@@ -71,7 +71,7 @@
           null
         ]
       },
-      "/Users/student/Code/Makers_Projects/Week_6/spec/features/adding_users_spec.rb": {
+      "/Users/isabelleben/Projects/teamProjects/MakersBnB/spec/features/adding_users_spec.rb": {
         "lines": [
           1,
           1,
@@ -84,8 +84,23 @@
           null
         ]
       },
-      "/Users/patrickoliver/Projects/Makers_Course/Group Projects/BnB/MakersBnB/spec/features/show_user_bookings_spec.rb": {
+      "/Users/isabelleben/Projects/teamProjects/MakersBnB/spec/features/show_user_bookings_spec.rb": {
         "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/isabelleben/Projects/teamProjects/MakersBnB/spec/features/showing_spaces_spec.rb": {
+        "lines": [
+          1,
           1,
           1,
           1,
@@ -93,41 +108,31 @@
           0,
           0,
           0,
+          null,
+          null
+        ]
+      },
+      "/Users/isabelleben/Projects/teamProjects/MakersBnB/spec/features/sign_in_sign_out_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
           0,
-          0,
           null,
           null
         ]
       },
-      "/Users/patrickoliver/Projects/Makers_Course/Group Projects/BnB/MakersBnB/spec/features/showing_spaces_spec.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/student/Code/Makers_Projects/Week_6/spec/features/sign_in_spec.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/student/Code/Makers_Projects/Week_6/spec/features/testing_infrastructure_spec.rb": {
+      "/Users/isabelleben/Projects/teamProjects/MakersBnB/spec/features/testing_infrastructure_spec.rb": {
         "lines": [
           null,
           null,
@@ -139,7 +144,7 @@
           null
         ]
       },
-      "/Users/student/Code/Makers_Projects/Week_6/spec/space_spec.rb": {
+      "/Users/isabelleben/Projects/teamProjects/MakersBnB/spec/space_spec.rb": {
         "lines": [
           null,
           null,
@@ -187,7 +192,7 @@
           null
         ]
       },
-      "/Users/student/Code/Makers_Projects/Week_6/spec/user_spec.rb": {
+      "/Users/isabelleben/Projects/teamProjects/MakersBnB/spec/user_spec.rb": {
         "lines": [
           1,
           null,
@@ -232,6 +237,15 @@
           null,
           null,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
           1,
           1,
           1,
@@ -243,6 +257,6 @@
         ]
       }
     },
-    "timestamp": 1585138801
+    "timestamp": 1585162474
   }
 }

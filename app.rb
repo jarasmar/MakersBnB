@@ -35,9 +35,14 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/sign_in' do
-    User.log_in(email: params[:email], password: params[:password])
+    User.sign_in(email: params[:email], password: params[:password])
 
     redirect '/user'
+  end
+
+  post '/sign_out' do
+    User.sign_out(user: @user)
+    redirect '/'
   end
 
   get '/user' do
@@ -54,8 +59,8 @@ class MakersBnB < Sinatra::Base
 
     # As we are not log_in yet, authenticate the user is registered in DB
     # If user exists, create the new space, if not, throw error
-    unless User.authenticate(email: params[:email], password: params[:password])
-      Flash[:notice] = 'Invalid User'
+    unless !@user == nil
+      Flash[:notice] = 'Please log in to create a space'
     end
 
     user_id = User.find_id(email: params[:email])
@@ -85,7 +90,7 @@ class MakersBnB < Sinatra::Base
   end
 
   # get '/bookings/:user_id'
-  #   Show all bookings that I have made 
+  #   Show all bookings that I have made
 
   #   awaiting confirmation
   #     bookings
@@ -94,7 +99,7 @@ class MakersBnB < Sinatra::Base
   #     bookings
 
   #   past bookings
-  #     bookings 
+  #     bookings
 
   #   bookings = Booking.find_user_bookings(user_id)
 
@@ -127,10 +132,10 @@ class MakersBnB < Sinatra::Base
 
   # spaces = Spaces.find_spaces(user_id)
 
-  #   spaces.each 
+  #   spaces.each
 
   #     Booking.find_space_bookings(space_id)
-    
+
   # end
 
   run! if app_file == $PROGRAM_NAME

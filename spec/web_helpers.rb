@@ -25,13 +25,18 @@ end
 
 def setup
   sign_up
+  sign_in
   create_new_space
 end
 
-def log_in
-  visit '/'
-  click_button('log in')
+def sign_in
+  visit '/sign_in'
   fill_in('email', with: 'myemail@test.com')
   fill_in('password', with: 'password')
-  click_button('Submit')
+  click_button('sign_in')
+end
+
+def sign_out
+  visit'/user'
+  click_button('sign_out')
 end
