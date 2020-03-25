@@ -1,4 +1,5 @@
 def sign_up
+  visit '/sign_up'
   fill_in('name', with: 'Neha Singh')
   fill_in('email', with: 'myemail@test.com')
   fill_in('password', with: 'password')
