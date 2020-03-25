@@ -13,11 +13,6 @@ class User
   end
 
   def self.create(name:, email:, password:)
-    # if ENV['ENVIRONMENT'] == 'test'
-    #   connection = PG.connect(dbname: 'makersbnb_test')
-    # else
-    #   connection = PG.connect(dbname: 'makersbnb')
-    # end
     result = DatabaseConnection.query("INSERT INTO users (name, email, password) VALUES('#{name}', '#{email}', '#{password}') RETURNING user_id, name, email, password;")
     User.new(user_id: result[0]['user_id'], name: result[0]['name'], email: result[0]['email'], password: result[0]['password'])
   end
@@ -34,8 +29,7 @@ class User
   def self.log_in(email:, password:)
     if User.authenticate(email: email, password: password) == true
       result = DatabaseConnection.query("SELECT * FROM users WHERE email = '#{email}'")
-
-      User.new(user_id: result[0]['user_id'], name: result[0]['name'], email: result[0]['email'], password: result[0]['password'],)
+      @user = User.new(user_id: result[0]['user_id'], name: result[0]['name'], email: result[0]['email'], password: result[0]['password'],)
     else
       'Log In Unsuccessful'
     end

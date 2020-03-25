@@ -10,9 +10,9 @@ class MakersBnB < Sinatra::Base
   enable :sessions, :method_override
   register Sinatra::Flash
 
-  # before do
-  #   @user = User.instance
-  # end
+  before do
+    @user = User.instance
+  end
 
   get '/' do
     @spaces = Space.all
@@ -35,7 +35,7 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/sign_in' do
-    @@user = User.log_in(email: params[:email], password: params[:password])
+    User.log_in(email: params[:email], password: params[:password])
 
     redirect '/user'
   end
