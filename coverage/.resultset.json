@@ -71,7 +71,7 @@
           null
         ]
       },
-      "/Users/patrickoliver/Projects/Makers_Course/Group Projects/BnB/MakersBnB/spec/features/adding_users_spec.rb": {
+      "/Users/student/Code/Makers_Projects/Week_6/spec/features/adding_users_spec.rb": {
         "lines": [
           1,
           1,
@@ -114,7 +114,20 @@
           null
         ]
       },
-      "/Users/patrickoliver/Projects/Makers_Course/Group Projects/BnB/MakersBnB/spec/features/testing_infrastructure_spec.rb": {
+      "/Users/student/Code/Makers_Projects/Week_6/spec/features/sign_in_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Code/Makers_Projects/Week_6/spec/features/testing_infrastructure_spec.rb": {
         "lines": [
           null,
           null,
@@ -126,7 +139,7 @@
           null
         ]
       },
-      "/Users/patrickoliver/Projects/Makers_Course/Group Projects/BnB/MakersBnB/spec/space_spec.rb": {
+      "/Users/student/Code/Makers_Projects/Week_6/spec/space_spec.rb": {
         "lines": [
           null,
           null,
@@ -174,7 +187,7 @@
           null
         ]
       },
-      "/Users/patrickoliver/Projects/Makers_Course/Group Projects/BnB/MakersBnB/spec/user_spec.rb": {
+      "/Users/student/Code/Makers_Projects/Week_6/spec/user_spec.rb": {
         "lines": [
           1,
           null,
@@ -212,6 +225,14 @@
           1,
           null,
           null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
           1,
           1,
           1,

@@ -40,4 +40,12 @@ describe User do
       expect(User.authenticate(email: "email@hello.com", password: "12345")).to be false
     end
   end
+
+  context '.log_in' do
+    it 'a user can log in' do
+      User.create(name: "Neha Singh", email: "myemail@test.com", password: "password")
+      user = User.log_in(email: "myemail@test.com", password: "password")
+      expect(user.name).to eq 'Neha Singh'
+    end
+  end
 end

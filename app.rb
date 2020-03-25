@@ -26,7 +26,17 @@ class MakersBnB < Sinatra::Base
   post '/sign_up' do
     # Saves into users DB (params - Name, email, username password)
     # Update parameter names when decided
-    @user = User.create(name: params[:name], email: params[:email], password: params[:password])
+    User.create(name: params[:name], email: params[:email], password: params[:password])
+    redirect '/sign_in'
+  end
+
+  get '/sign_in' do
+    erb :'users/sign_in'
+  end
+
+  post '/sign_in' do
+    User.log_in(email: params[:email], password: params[:password])
+
     redirect '/user'
   end
 
