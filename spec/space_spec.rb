@@ -36,8 +36,6 @@ describe Space do
     it 'knows when it is booked' do
       user = User.create(name: 'Jara', email: 'testemail.test.com', password: 'password')
       space = Space.create(space_name: 'Jara home', description: 'Nice Cozy room', price: 40.00, user_id: user.user_id)
-      p "hello"
-      p space.space_id
       Space.book(space_id: space.space_id)
       spaces = Space.all
       expect(spaces[0]['available']).to eq 'f'
