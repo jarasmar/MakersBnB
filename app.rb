@@ -92,6 +92,15 @@ class MakersBnB < Sinatra::Base
 
   # get '/myspacebooking/:user_id'
 
+  # get '/hosting/create_space'
+
+  # end
+
+  # get '/hosting/bookings'
+
+  # end
+
+
   #   Show all bookings for each of my spaces
 
   #   take my user_id
