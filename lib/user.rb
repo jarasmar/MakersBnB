@@ -35,8 +35,8 @@ class User
     end
   end
 
-  def self.sign_out(user:)
-    user = nil
+  def sign_out
+    @user = nil
   end
 
   def self.find_id(email:)

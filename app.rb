@@ -41,7 +41,7 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/sign_out' do
-    User.sign_out(user: @user)
+    @user.sign_out
     redirect '/'
   end
 
@@ -59,7 +59,7 @@ class MakersBnB < Sinatra::Base
 
     # As we are not log_in yet, authenticate the user is registered in DB
     # If user exists, create the new space, if not, throw error
-    unless !@user == nil
+    unless !! @user 
       Flash[:notice] = 'Please log in to create a space'
     end
 

@@ -53,8 +53,7 @@ describe User do
     it 'user can sign out' do
       User.create(name: "Neha Singh", email: "myemail@test.com", password: "password")
       user = User.sign_in(email: "myemail@test.com", password: "password")
-      User.sign_out(user: user)
-      expect(user).to eq nil
+      expect(user.sign_out).to eq nil
     end
   end
 end
