@@ -25,9 +25,6 @@
     <li class="space">
         <%=space.space_name%>
         <%=space.price%>
-      <form action="/spaces/book_space/<%=space.space_id%>" method="get">
-        <input type='submit' value="Book">
-      </form>
     </li>
     <%end%>
     </ul>
@@ -41,7 +38,5 @@
         <input type='submit' name='manage_spaces' value="Manage Spaces">
     </form>
 
-
-    (list of my spaces  - link to user ?)
   </body>
 </html>

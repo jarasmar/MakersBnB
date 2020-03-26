@@ -5,6 +5,7 @@ require 'sinatra/flash'
 require './lib/database_connection_setup.rb'
 require './lib/user.rb'
 require './lib/space'
+require './lib/booking'
 
 class MakersBnB < Sinatra::Base
   enable :sessions, :method_override
@@ -79,10 +80,13 @@ class MakersBnB < Sinatra::Base
     @pending = Booking.my_bookings(status: 0)
     @confirmed = Booking.my_bookings(status: 1)
     @declined = Booking.my_bookings(status: 2)
+    # @cancelled = Booking.my_bookings(status: 3)
     erb :'users/space_management'
   end
 
   post '/my_spaces/manage' do
+    p "hello"
+    p params
     # modifies availability in DB
     redirect '/my_spaces/manage'
   end

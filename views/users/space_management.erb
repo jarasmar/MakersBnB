@@ -20,14 +20,20 @@
         </div>
     </div>
 
+    <h2 class=headings> Pending Bookings </h2>
     <ul>
     <%@pending.each do |booking| %>
-    <li class="space">
-        <%=booking['space_name']%>
-        <%=booking['']%>
-        <%=space['price']%>
-      <form action="/spaces/book_space/<%=space['space_id']%>" method="get">
-        <input type='submit' value="Book">
+    <li class="pending_booking">
+        <%=booking.space.space_name%>
+        <%=booking.user.name%>
+        <%=booking.space.price%>
+      <form action="/my_spaces/manage" method="post">
+        <input type="hidden" name="booking_id" value="<%=booking.booking_id%>">
+        <input type='submit' name="accept" value="Accept">
+      </form>
+      <form action="/my_spaces/manage" method="post">
+        <input type="hidden" name="booking_id" value="<%=booking.booking_id%>">
+        <input type='submit' name="decline" value="Decline">
       </form>
     </li>
     <%end%>
