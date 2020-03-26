@@ -6,16 +6,16 @@ class Booking
 
   attr_reader :booking_id, :user_id, :space_id, :date, :status
 
-  def initialize(booking_id:, user_id:, space_id:, date:, status: status = 0)
+  def initialize(booking_id:, user_id:, space_id:, date: date = nil, status: status = 0)
     @booking_id = booking_id
     @user_id = user_id
     @space_id = space_id
     @date = date
-    @status = 0
+    @status = status
   end
 
-  def self.create(user_id:, space_id:)
-    result = DatabaseConnection.query("INSERT INTO bookings (user_id , space_id ) VALUES('#{user_id}', '#{space_id}') RETURNING booking_id, user_id , space_id , date, status;")
+  def self.create(user_id:, space_id:, date: date = '2020-03-23')
+    result = DatabaseConnection.query("INSERT INTO bookings (user_id , space_id, date ) VALUES('#{user_id}', '#{space_id}', '#{date}') RETURNING booking_id, user_id , space_id , date, status;")
     Booking.new(booking_id: result[0]['booking_id'], user_id: result[0]['user_id'], space_id: result[0]['space_id'], date: result[0]['date'])
   end
 
@@ -77,16 +77,26 @@ class Booking
     User.find(user_id: user_id)
   end
 
-  def self.find_user_bookings(user_id:)
-
-  end
-
-  def self.accept(booking_id:, space_id: )
-    DatabaseConnection.query("UPDATE bookings SET status = '1' WHERE booking_id = #{booking_id};")
+  def self.accept(booking_id:, space_id:)
     Space.book(space_id: space_id)
+    result = DatabaseConnection.query("UPDATE bookings SET status = '1' WHERE booking_id = #{booking_id} RETURNING booking_id, user_id, space_id, date, status;")
+    Booking.new(
+      booking_id: result[0]['booking_id'], 
+      user_id: result[0]['user_id'], 
+      space_id: result[0]['space_id'], 
+      date: result[0]['date'], 
+      status: result[0]['status']
+    )
   end
 
   def self.decline(booking_id:)
-    DatabaseConnection.query("UPDATE bookings SET status = '2' WHERE booking_id = #{booking_id};")
+    result = DatabaseConnection.query("UPDATE bookings SET status = '2' WHERE booking_id = #{booking_id} RETURNING booking_id, user_id, space_id, date, status;")
+    Booking.new(
+      booking_id: result[0]['booking_id'], 
+      user_id: result[0]['user_id'], 
+      space_id: result[0]['space_id'], 
+      date: result[0]['date'], 
+      status: result[0]['status']
+    )
   end
 end

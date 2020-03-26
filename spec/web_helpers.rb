@@ -1,8 +1,16 @@
-def sign_up
+def sign_up_1
   visit '/sign_up'
   fill_in('name', with: 'Neha Singh')
   fill_in('email', with: 'myemail@test.com')
   fill_in('password', with: 'password')
+  click_button('Submit')
+end
+
+def sign_up_2
+  visit '/sign_up'
+  fill_in('name', with: 'Ben')
+  fill_in('email', with: 'ben@test.com')
+  fill_in('password', with: '1234')
   click_button('Submit')
 end
 
@@ -22,15 +30,22 @@ def clear_test_database
 end
 
 def setup
-  sign_up
-  sign_in
+  sign_up_1
+  sign_in_1
   create_new_space
 end
 
-def sign_in
+def sign_in_1
   visit '/sign_in'
   fill_in('email', with: 'myemail@test.com')
   fill_in('password', with: 'password')
+  click_button('sign_in')
+end
+
+def sign_in_2
+  visit '/sign_in'
+  fill_in('email', with: 'ben@test.com')
+  fill_in('password', with: '1234')
   click_button('sign_in')
 end
 
@@ -44,4 +59,14 @@ def book_space
   visit('/user')
   first('.space').click_button 'Book'
   click_button('confirm')
+end
+
+def confirm_booking
+  visit('/my_spaces/manage')
+  click_button('Accept')
+end
+
+def decline_booking
+  visit('/my_spaces/manage')
+  click_button('Decline')
 end

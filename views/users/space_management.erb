@@ -27,13 +27,11 @@
         Space: <%=booking.space.space_name%><br>
         Price: <%=booking.space.price%><br>
         Booked by: <%=booking.user.name%><br>
-        <form action="/my_spaces/manage" method="post">
-          <input type="hidden" name="booking_id" value="<%=booking.booking_id%>">
+        <form action="/my_spaces/manage/<%=booking.booking_id%>/accept" method="post">
           <input type="hidden" name="space_id" value="<%=booking.space.space_id%>">
           <input type='submit' name="response" value="Accept">
         </form>
-        <form action="/my_spaces/manage" method="post">
-          <input type="hidden" name="booking_id" value="<%=booking.booking_id%>">
+        <form action="/my_spaces/manage/<%=booking.booking_id%>/decline" method="post">
           <input type="hidden" name="space_id" value="<%=booking.space.space_id%>">
           <input type='submit' name="response" value="Decline">
         </form>
@@ -44,7 +42,7 @@
    <h2 class=headings> Confirmed Bookings </h2>
     <ul>
     <%@confirmed.each do |booking| %>
-    <li class="pending_bookings">
+    <li class="confirmed_bookings">
           Space: <%=booking.space.space_name%><br>
           Price: <%=booking.space.price%><br>
           Booked By: <%=booking.user.name%><br>
@@ -55,7 +53,7 @@
     <h2 class=headings> Declined Bookings </h2>
     <ul>
     <%@declined.each do |booking| %>
-    <li class="pending_bookings">
+    <li class="declined_bookings">
           Space: <%=booking.space.space_name%><br>
           Price: <%=booking.user.name%><br>
           Booked By: <%=booking.space.price%><br>

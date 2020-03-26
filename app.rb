@@ -140,14 +140,13 @@ class MakersBnB < Sinatra::Base
      # end
   end
 
-  post '/my_spaces/manage' do
-    p params
-    # modifies availability in DB
-    if params[:response] == "Accept"
-      Booking.accept(booking_id: params[:booking_id], space_id: params[:space_id])
-    elsif params[:response] == "Decline"
-      Booking.decline(booking_id: params[:booking_id])
-    end
+  post '/my_spaces/manage/:booking_id/accept' do
+    Booking.accept(booking_id: params[:booking_id], space_id: params[:space_id])
+    redirect '/my_spaces/manage'
+  end
+
+  post '/my_spaces/manage/:booking_id/decline' do
+    Booking.decline(booking_id: params[:booking_id])
     redirect '/my_spaces/manage'
   end
 
