@@ -70,12 +70,8 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/spaces/book_space/:space_id' do
-    p params
     # find_space gets all the information from a space from the DB with the id
-    p "hello"
     @space = Space.find_space(space_id: params[:space_id])
-    p "after find space"
-    p @space
     erb :'spaces/book'
   end
 
