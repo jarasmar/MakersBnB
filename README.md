@@ -24,11 +24,12 @@ To set up the appropriate tables, connect to the datatbase in `psql` and run the
 ## Views Plan: ##
 
 ```
-get '/'                     -->  display index.erb (link to sign_up - spaces list)
+get '/'                     -->  display index.erb (link to sign_up and sign_in - spaces list)
 get '/sign_up'              -->  display sign_up.erb (sign_up form, submit button)
 post '/sign_up'             -->  redirect to ./sign_in (saves data to users table in DB)
 get '/sign_in'              -->  display sign_in.erb (sign in form)
 post '/sign_in'             -->  redirect to ./user (authenticates and gets new user from DB)
+post '/sign_out'            -->  removes current user data
 get '/user'                 -->  display user.erb (link to my_bookings - link to my_spaces - space list with links to book_space)
 get '/my_bookings/:user_id' -->  display my_bookings.erb (list of bookings with status - link to '/user')
 get '/my_spaces'            -->  display my_spaces.erb (list of my spaces - link to create_space - link to manage_spaces - link to user)
