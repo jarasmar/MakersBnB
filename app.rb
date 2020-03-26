@@ -51,11 +51,11 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/my_bookings/:user_id' do
-    erb :my_bookings
+    erb :'users/my_bookings'
   end
 
-  get 'my_spaces' do
-    erb :my_spaces
+  get '/my_spaces' do
+    erb :'users/my_spaces'
   end
 
   get '/my_spaces/create_space' do
@@ -68,16 +68,14 @@ class MakersBnB < Sinatra::Base
 
     # As we are not log_in yet, authenticate the user is registered in DB
     # If user exists, create the new space, if not, throw error
-    unless !! @user
-      Flash[:notice] = 'Please log in to create a space'
-    end
+    Flash[:notice] = 'Please log in to create a space' unless !!@user
 
     Space.create(space_name: params[:space_name], description: params[:description], price: params[:price], user_id: @user.user_id)
     redirect '/my_spaces'
   end
 
   get '/my_spaces/manage' do
-    erb :space_management
+    erb :'users/space_management'
   end
 
   post '/my_spaces/manage' do
