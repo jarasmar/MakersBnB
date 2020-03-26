@@ -11,9 +11,9 @@
     <div class="dropdown">
       <button class="dropbtn">Menu</button>
         <div class="dropdown-content">
-          <a href="/book">Make a booking</a>
-          <a href="/create_space">Create a space</a>
-          <a href="/">Sign Out</a>
+          <a href="/my_bookings/:user_id">Manage Bookings</a>
+          <a href="/my_spaces">Manage Spaces</a>
+          <a href="/sign_out">Sign Out</a>
         </div>
     </div>
 
@@ -36,12 +36,12 @@
     <%end%>
     </ul>
 
-    <p><form action="/create_space" method="get">
-        <input type='submit' value="Create Space">
+    <p><form action="/my_bookings/:user_id" method="get">
+        <input type='submit' value="My Bookings">
     </form>
 
-    <p><form action="/sign_out" method="post">
-        <input type='submit' name='sign_out' value="Sign Out">
+    <p><form action="/my_spaces" method="get">
+        <input type='submit' name='my_spaces' value="My Spaces">
     </form>
 
   </body>

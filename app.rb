@@ -50,11 +50,19 @@ class MakersBnB < Sinatra::Base
     erb :user
   end
 
-  get '/create_space' do
+  get '/my_bookings/:user_id' do
+    erb :my_bookings
+  end
+
+  get 'my_spaces' do
+    erb :my_spaces
+  end
+
+  get '/my_spaces/create_space' do
     erb :'spaces/create'
   end
 
-  post '/create_space' do
+  post '/my_spaces/create_space' do
     # Saves into spaces DB
     # Update parameter names when decided
 
@@ -64,9 +72,17 @@ class MakersBnB < Sinatra::Base
       Flash[:notice] = 'Please log in to create a space'
     end
 
-
     Space.create(space_name: params[:space_name], description: params[:description], price: params[:price], user_id: @user.user_id)
-    redirect '/user'
+    redirect '/my_spaces'
+  end
+
+  get '/my_spaces/manage' do
+    erb :space_management
+  end
+
+  post '/my_spaces/manage' do
+    # modifies availability in DB
+    redirect '/my_spaces/manage'
   end
 
   get '/book_space/:space_id' do
@@ -86,57 +102,8 @@ class MakersBnB < Sinatra::Base
     end
 
     Space.book(space: params[:space_id])
-    redirect '/user'
+    redirect '/my_bookings/:user_id'
   end
-
-  # get '/bookings/:user_id'
-  #   Show all bookings that I have made
-
-  #   awaiting confirmation
-  #     bookings
-
-  #   future bookings
-  #     bookings
-
-  #   past bookings
-  #     bookings
-
-  #   bookings = Booking.find_user_bookings(user_id)
-
-  # end
-
-  # get '/myspacebooking/:user_id'
-
-  # get '/hosting/create_space'
-
-  # end
-
-  # get '/hosting/bookings'
-
-  # end
-
-
-  #   Show all bookings for each of my spaces
-
-  #   take my user_id
-  #   find all spaces related to my user_id
-  #   find bookings related to each of these space_ids
-
-  #   space 1
-  #     booking 1
-  #     bookings 2
-
-  #   space 2
-  #     booking 1
-  #     booking 2
-
-  # spaces = Spaces.find_spaces(user_id)
-
-  #   spaces.each
-
-  #     Booking.find_space_bookings(space_id)
-
-  # end
 
   run! if app_file == $PROGRAM_NAME
 end

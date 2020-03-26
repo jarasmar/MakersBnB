@@ -11,11 +11,13 @@
     <div class="dropdown">
       <button class="dropbtn">Menu</button>
         <div class="dropdown-content">
-          <a href="/book">Make a booking</a>
-          <a href="/create_space">Create a space</a>
-          <a href="/">Sign Out</a>
+          <a href="/user">Home</a>
+          <a href="/my_bookings/:user_id">Manage Bookings</a>
+          <a href="/my_spaces">Manage Spaces</a>
+          <a href="/sign_out">Sign Out</a>
         </div>
     </div>
+
     <div class=content>
 
     <h2 class=headings> Create a new Space </h2>
@@ -29,14 +31,6 @@
 
         <p><label for="description"> Description </label>
         <textarea class=description type='text' name="description" placeholder="Description"></textarea>
-
-
-<!--
-        <label for="email"> Email </label>
-        <input type='text' name="email" placeholder="Email">
-
-        <label for="password"> Password </label>
-        <input type='text' name="password" placeholder="Password"> -->
 
         <p><input type="submit" value="Submit"></p>
     </form>

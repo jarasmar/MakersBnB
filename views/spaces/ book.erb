@@ -6,6 +6,17 @@
   </head>
 
   <body>
+
+    <div class="dropdown">
+      <button class="dropbtn">Menu</button>
+        <div class="dropdown-content">
+          <a href="/user">Home</a>
+          <a href="/my_bookings/:user_id">Manage Bookings</a>
+          <a href="/my_spaces">Manage Spaces</a>
+          <a href="/sign_out">Sign Out</a>
+        </div>
+    </div>
+
     <p> This is the space you selected: </p>
     <%= @space.name %>
     <%= @space.description %>
