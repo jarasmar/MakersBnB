@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def sign_up_1
   visit '/sign_up'
   fill_in('name', with: 'Neha Singh')
@@ -23,10 +25,10 @@ def create_new_space
 end
 
 def clear_test_database
-  p "Setting up the test database.."
+  p 'Setting up the test database..'
   connection = PG.connect(dbname: 'makersbnb_test')
-  connection.exec("TRUNCATE TABLE users CASCADE;")
-  #cascade should also cause any dependent tables to be truncated
+  connection.exec('TRUNCATE TABLE users CASCADE;')
+  # cascade should also cause any dependent tables to be truncated
 end
 
 def setup
@@ -50,7 +52,7 @@ def sign_in_2
 end
 
 def sign_out
-  visit'/user'
+  visit '/user'
   click_button('dropbtn')
   click_button('sign_out')
 end

@@ -80,7 +80,6 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/my_spaces/manage' do
-
     @pending = @user.my_space_bookings(status: 0)
     @confirmed = @user.my_space_bookings(status: 1)
     @declined = @user.my_space_bookings(status: 2)
@@ -89,55 +88,54 @@ class MakersBnB < Sinatra::Base
 
     # get booking user, space, and booking for each booking
 
-    # pending will take status = 0, and my user_id. These will be passed to a method which will 
+    # pending will take status = 0, and my user_id. These will be passed to a method which will
 
-     #   take my user_id
-     #   find all bookings relating to my user_id
+    #   take my user_id
+    #   find all bookings relating to my user_id
 
-     #   find all pending bookings related to my user_id
+    #   find all pending bookings related to my user_id
 
-          # SELECT *
-          # FROM bookings
-          # INNER JOIN bookings
-          # ON booking_id = bookings.booking_id
-          # INNER JOIN spaces
-          # ON spaces_id = spaces.spaces_id
-          # WHERE spaces.user_id = '#{user_id}';
+    # SELECT *
+    # FROM bookings
+    # INNER JOIN bookings
+    # ON booking_id = bookings.booking_id
+    # INNER JOIN spaces
+    # ON spaces_id = spaces.spaces_id
+    # WHERE spaces.user_id = '#{user_id}';
 
-    # for each booking_id 
+    # for each booking_id
 
-        #   get booking user, space, and booking for each booking
+    #   get booking user, space, and booking for each booking
 
-          # booking user
+    # booking user
 
-            # SELECT *
-            # FROM users
-            # INNER JOIN bookings
-            # ON user.id = bookings.user_id
-            # WHERE bookings.booking_id = '#{booking_id}';
+    # SELECT *
+    # FROM users
+    # INNER JOIN bookings
+    # ON user.id = bookings.user_id
+    # WHERE bookings.booking_id = '#{booking_id}';
 
+    #   for each pending booking, have the option to accept or decline
 
-     #   for each pending booking, have the option to accept or decline
+    #   pending
+    #     booking 1
+    #     bookings 2
 
-     #   pending
-     #     booking 1
-     #     bookings 2
+    #   confirmed
+    #     booking 1
+    #     booking 2
 
-     #   confirmed
-     #     booking 1
-     #     booking 2
+    #   declined
+    #     booking 1
+    #     booking 2
 
-     #   declined
-     #     booking 1
-     #     booking 2
+    # spaces = Spaces.find_spaces(user_id)
 
-     # spaces = Spaces.find_spaces(user_id)
+    #   spaces.each
 
-     #   spaces.each
+    #     Booking.find_space_bookings(space_id)
 
-     #     Booking.find_space_bookings(space_id)
-
-     # end
+    # end
   end
 
   post '/my_spaces/manage/:booking_id/accept' do
@@ -160,60 +158,58 @@ class MakersBnB < Sinatra::Base
     # change availability in spaces DB
     # As we are not log_in yet, authenticate the user is registered in DB
     # If user exists, create the new space, if not, throw error
-    Flash[:notice] = 'Please log in to book a space' unless !! @user
+    Flash[:notice] = 'Please log in to book a space' unless !!@user
 
     Booking.create(user_id: @user.user_id, space_id: params[:space_id])
     redirect "/my_bookings/#{@user.user_id}"
   end
-    # get '/bookings/:user_id'
-     #   Show all bookings that I have made
+  # get '/bookings/:user_id'
+  #   Show all bookings that I have made
 
-     #   awaiting confirmation
-     #     bookings
+  #   awaiting confirmation
+  #     bookings
 
-     #   future bookings
-     #     bookings
+  #   future bookings
+  #     bookings
 
-     #   past bookings
-     #     bookings
+  #   past bookings
+  #     bookings
 
-     #   bookings = Booking.find_user_bookings(user_id)
+  #   bookings = Booking.find_user_bookings(user_id)
 
-     # end
+  # end
 
-     # get '/myspacebooking/:user_id'
+  # get '/myspacebooking/:user_id'
 
-     # get '/hosting/create_space'
+  # get '/hosting/create_space'
 
-     # end
+  # end
 
-     # get '/hosting/bookings'
+  # get '/hosting/bookings'
 
-     # end
+  # end
 
+  #   Show all bookings for each of my spaces
 
-     #   Show all bookings for each of my spaces
+  #   take my user_id
+  #   find all spaces related to my user_id
+  #   find bookings related to each of these space_ids
 
-     #   take my user_id
-     #   find all spaces related to my user_id
-     #   find bookings related to each of these space_ids
+  #   space 1
+  #     booking 1
+  #     bookings 2
 
-     #   space 1
-     #     booking 1
-     #     bookings 2
+  #   space 2
+  #     booking 1
+  #     booking 2
 
-     #   space 2
-     #     booking 1
-     #     booking 2
+  # spaces = Spaces.find_spaces(user_id)
 
-     # spaces = Spaces.find_spaces(user_id)
+  #   spaces.each
 
-     #   spaces.each
+  #     Booking.find_space_bookings(space_id)
 
-     #     Booking.find_space_bookings(space_id)
-
-     # end
-
+  # end
 
   run! if app_file == $PROGRAM_NAME
 end

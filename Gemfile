@@ -1,16 +1,14 @@
 # frozen_string_literal: true
 
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-
-gem 'rspec'
 gem 'capybara'
-gem 'sinatra'
+gem 'pg', '~> 0.18.4'
+gem 'rspec'
 gem 'rubocop-rails'
 gem 'simplecov'
 gem 'simplecov-console'
-gem 'pg', '~> 0.18.4'
+gem 'sinatra'
 gem 'sinatra-flash'
-
 
 # gem "rails"

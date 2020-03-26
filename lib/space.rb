@@ -20,7 +20,7 @@ class Space
   end
 
   def self.all
-    DatabaseConnection.query("SELECT * FROM spaces;")
+    DatabaseConnection.query('SELECT * FROM spaces;')
   end
 
   def self.book(space_id:)
@@ -41,7 +41,6 @@ class Space
   end
 
   def self.available
-    DatabaseConnection.query("SELECT * FROM spaces WHERE available = TRUE;")
+    DatabaseConnection.query('SELECT * FROM spaces WHERE available = TRUE;')
   end
-
 end

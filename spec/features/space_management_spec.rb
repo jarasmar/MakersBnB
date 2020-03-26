@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 feature 'showing my spaces' do
   scenario 'user can see all their spaces' do
     setup
     visit '/my_spaces'
-    expect(page).to have_content("Jara home")
-    expect(page).to have_content("40.00")
+    expect(page).to have_content('Jara home')
+    expect(page).to have_content('40.00')
   end
 
   scenario 'user can accept a booking' do
@@ -15,8 +17,8 @@ feature 'showing my spaces' do
     sign_out
     sign_in_1
     confirm_booking
-    expect(first('.confirmed_bookings')).to have_content("Jara home")
-    expect(first('.confirmed_bookings')).to have_content("40.00")
+    expect(first('.confirmed_bookings')).to have_content('Jara home')
+    expect(first('.confirmed_bookings')).to have_content('40.00')
   end
 
   scenario 'user can decline a booking' do
@@ -28,7 +30,7 @@ feature 'showing my spaces' do
     sign_out
     sign_in_1
     decline_booking
-    expect(first('.declined_bookings')).to have_content("Jara home")
-    expect(first('.declined_bookings')).to have_content("40.00")
+    expect(first('.declined_bookings')).to have_content('Jara home')
+    expect(first('.declined_bookings')).to have_content('40.00')
   end
 end

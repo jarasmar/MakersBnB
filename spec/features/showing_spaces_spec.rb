@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 feature 'show spaces' do
   scenario 'user can see all spaces' do
     setup
@@ -8,7 +10,7 @@ feature 'show spaces' do
     expect(first('.space')).to have_content('40.00')
   end
 
-  scenario 'user sees only available spaces' do 
+  scenario 'user sees only available spaces' do
     setup
     sign_out
     sign_up_2

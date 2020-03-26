@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'pg'
 
 class DatabaseConnection
@@ -13,6 +15,3 @@ class DatabaseConnection
     @connection.exec(sql)
   end
 end
-
-
-

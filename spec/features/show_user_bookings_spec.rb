@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # feature 'show user bookings' do
 #   scenario 'users can view their bookings' do
 #     setup

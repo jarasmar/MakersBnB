@@ -3,10 +3,7 @@
 require 'space'
 require 'user'
 
-
-
 describe Space do
-
   # let(:user) { double(user(name: 'Jara', email: 'testemail.test.com', password: 'password')) }
 
   context '.create' do
