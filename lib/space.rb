@@ -28,6 +28,13 @@ class Space
     @available = false
   end
 
+  def self.find_space(space_id:)
+    result = DatabaseConnection.query("SELECT * FROM spaces WHERE space_id = '#{space_id}';")
+    Space.new(space_id: result[0]['space_id'], space_name: result[0]['space_name'], description: result[0]['description'], price: result[0]['price'], user_id: result[0]['user_id'])
+  end
 
+  def self.available
+    DatabaseConnection.query("SELECT * FROM spaces WHERE available = TRUE;")
+  end
 
 end

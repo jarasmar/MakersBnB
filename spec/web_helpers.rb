@@ -38,3 +38,9 @@ def sign_out
   visit'/user'
   click_button('sign_out')
 end
+
+def book_space
+  visit('/user')
+  first('.space').click_button 'book'
+  click_button('confirm')
+end

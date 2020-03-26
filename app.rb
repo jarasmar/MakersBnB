@@ -46,7 +46,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/user' do
-    @spaces = Space.all
+    @spaces = Space.available
     erb :user
   end
 
@@ -69,23 +69,25 @@ class MakersBnB < Sinatra::Base
     redirect '/user'
   end
 
-  get '/book_space/:space_id' do
+  get '/spaces/book_space/:space_id' do
+    p params
     # find_space gets all the information from a space from the DB with the id
-    @space = Space.find_space(params[:space_id])
-
+    p "hello"
+    @space = Space.find_space(space_id: params[:space_id])
+    p "after find space"
+    p @space
     erb :'spaces/book'
   end
 
-  post '/book_space/:space_id' do
+  post '/spaces/book_space/:space_id' do
     # change availability in spaces DB
-
     # As we are not log_in yet, authenticate the user is registered in DB
     # If user exists, create the new space, if not, throw error
-    unless User.authenticate(email: params[:email], password: params[:password])
-      Flash[:notice] = 'Invalid User'
+    unless !! @user
+      Flash[:notice] = 'Please log in to book a space'
     end
 
-    Space.book(space: params[:space_id])
+    Space.book(space_id: params[:space_id])
     redirect '/user'
   end
 

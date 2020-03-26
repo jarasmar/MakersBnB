@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Makers BnB</title>
+  </head>
+
+  <body>
+    <p> This is the space you selected: </p>
+    <%= @space.space_name %>
+    <%= @space.description %>
+    <%= @space.price %>
+
+    <form action="/spaces/book_space/<%=@space.space_id%>" method="post">
+        <input type="submit" name="confirm" value="Confirm Booking">
+    </form>
+  </body>
+</html>

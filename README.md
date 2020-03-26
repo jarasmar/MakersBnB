@@ -19,6 +19,13 @@ CREATE DATABASE makersbnb_test;
 
 To set up the appropriate tables, connect to the datatbase in `psql` and run the SQL scripts in the `db/migrations` directory in the given folder.
 
+KEY:
+Bookings Table Status column Integer - 
+0 = pending
+1 = confirmed
+2 = declined
+<!-- 3 = cancelled  -->
+
 ### To run tests ###
 `rspec` from the parent directory
 ## Views Plan: ##
