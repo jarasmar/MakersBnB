@@ -36,6 +36,7 @@ end
 
 def sign_out
   visit'/user'
+  click_button('dropbtn')
   click_button('sign_out')
 end
 

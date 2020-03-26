@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='bnb_styles.css'>
+    <title class='headings'>Makers BnB</title>
+  </head>
+
+  <body>
+    <div class="dropdown">
+      <button class="dropbtn">Menu</button>
+        <div class="dropdown-content">
+          <a href="/user">Home</a>
+          <a href="/my_spaces">Manage Spaces</a>
+          <form action='/sign_out' method='post'>
+            <input type='submit' name='sign_out' value='Sign Out'>
+          </form>
+        </div>
+    </div>
+    <%# <ul> %>
+    <%# <%@spaces.each do |space| %> %>
+    <%# <li class="space"> %>
+        <%# <%=space['name']%> %>
+        <%# <%=space['description']%> %>
+        <%# <%=space['price']%> %>
+        <%# </li> %>
+    <%# <%end%> %>
+    <%# </ul> %>
+
+    list of bookings with status - (link to '/user' ?)
+
+  </body>
+</html>

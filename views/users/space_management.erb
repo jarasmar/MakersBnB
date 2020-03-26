@@ -1,14 +1,11 @@
 
-
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
-      <link rel='stylesheet' href='bnb_styles.css'>
-    <title class=headings>Makers BnB</title>
+    <link rel='stylesheet' href='bnb_styles.css'>
+    <title class='headings'>Makers BnB</title>
   </head>
-
   <body>
 
     <div class="dropdown">
@@ -23,13 +20,7 @@
         </div>
     </div>
 
-    <p> This is the space you selected: </p>
-    <%= @space.space_name %>
-    <%= @space.description %>
-    <%= @space.price %>
+    (list of my spaces with booking requests and accept/decline options)
 
-     <form action="/spaces/book_space/<%=@space.space_id%>" method="post">
-        <input type="submit" name="confirm" value="Confirm Booking">
-    </form>
   </body>
 </html>
