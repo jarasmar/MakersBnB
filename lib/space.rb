@@ -33,6 +33,13 @@ class Space
     Space.new(space_id: result[0]['space_id'], space_name: result[0]['space_name'], description: result[0]['description'], price: result[0]['price'], user_id: result[0]['user_id'])
   end
 
+  def self.my_spaces(user_id:)
+    selected_spaces = DatabaseConnection.query("SELECT * FROM spaces WHERE user_id = '#{user_id}';")
+    selected_spaces.map do |space|
+      Space.new(space_id: space['space_id'], space_name: space['space_name'], description: space['description'], price: space['price'], user_id: space['user_id'])
+    end
+  end
+
   def self.available
     DatabaseConnection.query("SELECT * FROM spaces WHERE available = TRUE;")
   end

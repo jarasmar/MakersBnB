@@ -20,6 +20,18 @@
         </div>
     </div>
 
+    <ul>
+    <%@my_spaces.each do |space| %>
+    <li class="space">
+        <%=space.space_name%>
+        <%=space.price%>
+      <form action="/spaces/book_space/<%=space.space_id%>" method="get">
+        <input type='submit' value="Book">
+      </form>
+    </li>
+    <%end%>
+    </ul>
+
 
     <p><form action="/my_spaces/create_space" method="get">
         <input type='submit'  name='create_space'value="Create Space">

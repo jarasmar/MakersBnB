@@ -20,6 +20,19 @@
         </div>
     </div>
 
+    <ul>
+    <%@pending.each do |booking| %>
+    <li class="space">
+        <%=booking['space_name']%>
+        <%=booking['']%>
+        <%=space['price']%>
+      <form action="/spaces/book_space/<%=space['space_id']%>" method="get">
+        <input type='submit' value="Book">
+      </form>
+    </li>
+    <%end%>
+    </ul>
+
     (list of my spaces with booking requests and accept/decline options)
 
   </body>

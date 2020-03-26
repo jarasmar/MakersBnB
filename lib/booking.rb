@@ -27,7 +27,7 @@ class Booking
   end
 
   def self.find_space_bookings(space_id:)
-
+    Space.find_space(space_id: space_id)
   end
 
   def self.find_user_bookings(user_id:)
