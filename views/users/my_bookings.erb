@@ -17,15 +17,35 @@
           </form>
         </div>
     </div>
-    <%# <ul> %>
-    <%# <%@spaces.each do |space| %> %>
-    <%# <li class="space"> %>
-        <%# <%=space['name']%> %>
-        <%# <%=space['description']%> %>
-        <%# <%=space['price']%> %>
-        <%# </li> %>
-    <%# <%end%> %>
-    <%# </ul> %>
+    <ul>
+    <h2>Pending</h2>
+    <%@pending.each do |booking| %>
+    <li class="pending">
+        Space: <%=booking.space.space_name%><br>
+        Price: <%=booking.space.price%><br>
+        </li>
+    <%end%>
+    </ul>
+
+      <ul>
+    <h2>Accepted</h2>
+    <%@accepted.each do |booking| %>
+    <li class="accepted">
+      Space: <%=booking.space.space_name%><br>
+      Price: <%=booking.space.price%><br>
+        </li>
+    <%end%>
+    </ul>
+
+      <ul>
+    <h2>Declined</h2>
+    <%@declined.each do |booking| %>
+    <li class="declined">
+        Space: <%=booking.space.space_name%><br>
+        Price: <%=booking.space.price%><br>
+        </li>
+    <%end%>
+    </ul>
 
     list of bookings with status - (link to '/user' ?)
 

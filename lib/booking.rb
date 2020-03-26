@@ -6,7 +6,7 @@ class Booking
 
   attr_reader :booking_id, :user_id, :space_id, :date, :status
 
-  def initialize(booking_id:, user_id:, space_id:, date:)
+  def initialize(booking_id:, user_id:, space_id:, date:, status: status = 0)
     @booking_id = booking_id
     @user_id = user_id
     @space_id = space_id
@@ -14,12 +14,12 @@ class Booking
     @status = 0
   end
 
-  def self.create(user_id:, space_id:, date:)
-    result = DatabaseConnection.query("INSERT INTO bookings (user_id , space_id , date) VALUES('#{user_id}', '#{space_id}', '#{date}') RETURNING booking_id, user_id , space_id , date, status;")
+  def self.create(user_id:, space_id:)
+    result = DatabaseConnection.query("INSERT INTO bookings (user_id , space_id ) VALUES('#{user_id}', '#{space_id}') RETURNING booking_id, user_id , space_id , date, status;")
     Booking.new(booking_id: result[0]['booking_id'], user_id: result[0]['user_id'], space_id: result[0]['space_id'], date: result[0]['date'])
   end
 
-  def self.my_bookings(status:)
+  def my_bookings(user_id:, status:)
     DatabaseConnection.query("SELECT * FROM bookings WHERE status = '#{status}';")
   end
 
@@ -27,19 +27,66 @@ class Booking
     DatabaseConnection.query("Select * FROM bookings;")
   end
 
-  def self.find_space_bookings(space_id:)
-    Space.find_space(space_id: space_id)
+  # def self.my_space_bookings(user_id:, status:)
+  #   my_spaces = Space.my_spaces(user_id: user_id)
+  #   my_spaces.map do |space|
+  #     bookings = DatabaseConnection.query("SELECT * FROM bookings WHERE status = '#{status}' AND space_id = '#{space.space_id}';")
+  #     bookings.map do |booking|
+  #       Booking.new(
+  #         booking_id: booking['booking_id'], 
+  #         user_id: booking['user_id'], 
+  #         space_id: booking['space_id'], 
+  #         date: booking['date'],
+  #         status: booking['status']
+  #       )
+  #     end
+  #   end
+  # end
+
+  def self.my_space_bookings(user_id:, status: )
+    bookings = DatabaseConnection.query("SELECT * FROM bookings INNER JOIN spaces ON bookings.space_id = spaces.space_id WHERE spaces.user_id = '#{user_id}' AND bookings.status = '#{status}';")
+    bookings.map do |booking|
+      Booking.new(
+        booking_id: booking['booking_id'], 
+        user_id: booking['user_id'], 
+        space_id: booking['space_id'], 
+        date: booking['date'], 
+        status: booking['status']
+      )
+    end
+  end
+
+  def self.my_bookings(user_id:, status: )
+    bookings = DatabaseConnection.query("SELECT * FROM bookings WHERE bookings.user_id = '#{user_id}' AND bookings.status = '#{status}';")
+    bookings.map do |booking|
+      Booking.new(
+        booking_id: booking['booking_id'], 
+        user_id: booking['user_id'], 
+        space_id: booking['space_id'], 
+        date: booking['date'], 
+        status: booking['status']
+      )
+    end
+  end
+
+  def space
+    Space.find_space(space_id: @space_id)
+  end
+
+  def user(user_id: user_id = @user_id)
+    User.find(user_id: user_id)
   end
 
   def self.find_user_bookings(user_id:)
 
   end
 
-  def accept
-    @status = 1
+  def self.accept(booking_id:, space_id: )
+    DatabaseConnection.query("UPDATE bookings SET status = '1' WHERE booking_id = #{booking_id};")
+    Space.book(space_id: space_id)
   end
 
-  def decline
-    @status = 2
+  def self.decline(booking_id:)
+    DatabaseConnection.query("UPDATE bookings SET status = '2' WHERE booking_id = #{booking_id};")
   end
 end

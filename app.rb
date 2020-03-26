@@ -52,6 +52,9 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/my_bookings/:user_id' do
+    @pending = @user.my_bookings(status: 0)
+    @accepted = @user.my_bookings(status: 1)
+    @declined = @user.my_bookings(status: 2)
     erb :'users/my_bookings'
   end
 
@@ -77,17 +80,74 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/my_spaces/manage' do
-    @pending = Booking.my_bookings(status: 0)
-    @confirmed = Booking.my_bookings(status: 1)
-    @declined = Booking.my_bookings(status: 2)
+
+    @pending = @user.my_space_bookings(status: 0)
+    @confirmed = @user.my_space_bookings(status: 1)
+    @declined = @user.my_space_bookings(status: 2)
     # @cancelled = Booking.my_bookings(status: 3)
     erb :'users/space_management'
+
+    # get booking user, space, and booking for each booking
+
+    # pending will take status = 0, and my user_id. These will be passed to a method which will 
+
+     #   take my user_id
+     #   find all bookings relating to my user_id
+
+     #   find all pending bookings related to my user_id
+
+          # SELECT *
+          # FROM bookings
+          # INNER JOIN bookings
+          # ON booking_id = bookings.booking_id
+          # INNER JOIN spaces
+          # ON spaces_id = spaces.spaces_id
+          # WHERE spaces.user_id = '#{user_id}';
+
+    # for each booking_id 
+
+        #   get booking user, space, and booking for each booking
+
+          # booking user
+
+            # SELECT *
+            # FROM users
+            # INNER JOIN bookings
+            # ON user.id = bookings.user_id
+            # WHERE bookings.booking_id = '#{booking_id}';
+
+
+     #   for each pending booking, have the option to accept or decline
+
+     #   pending
+     #     booking 1
+     #     bookings 2
+
+     #   confirmed
+     #     booking 1
+     #     booking 2
+
+     #   declined
+     #     booking 1
+     #     booking 2
+
+     # spaces = Spaces.find_spaces(user_id)
+
+     #   spaces.each
+
+     #     Booking.find_space_bookings(space_id)
+
+     # end
   end
 
   post '/my_spaces/manage' do
-    p "hello"
     p params
     # modifies availability in DB
+    if params[:response] == "Accept"
+      Booking.accept(booking_id: params[:booking_id], space_id: params[:space_id])
+    elsif params[:response] == "Decline"
+      Booking.decline(booking_id: params[:booking_id])
+    end
     redirect '/my_spaces/manage'
   end
 
@@ -103,7 +163,7 @@ class MakersBnB < Sinatra::Base
     # If user exists, create the new space, if not, throw error
     Flash[:notice] = 'Please log in to book a space' unless !! @user
 
-    Space.book(space_id: params[:space_id])
+    Booking.create(user_id: @user.user_id, space_id: params[:space_id])
     redirect "/my_bookings/#{@user.user_id}"
   end
     # get '/bookings/:user_id'

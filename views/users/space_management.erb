@@ -23,23 +23,45 @@
     <h2 class=headings> Pending Bookings </h2>
     <ul>
     <%@pending.each do |booking| %>
-    <li class="pending_booking">
-        <%=booking.space.space_name%>
-        <%=booking.user.name%>
-        <%=booking.space.price%>
-      <form action="/my_spaces/manage" method="post">
-        <input type="hidden" name="booking_id" value="<%=booking.booking_id%>">
-        <input type='submit' name="accept" value="Accept">
-      </form>
-      <form action="/my_spaces/manage" method="post">
-        <input type="hidden" name="booking_id" value="<%=booking.booking_id%>">
-        <input type='submit' name="decline" value="Decline">
-      </form>
+    <li class="pending_bookings">
+        Space: <%=booking.space.space_name%><br>
+        Price: <%=booking.space.price%><br>
+        Booked by: <%=booking.user.name%><br>
+        <form action="/my_spaces/manage" method="post">
+          <input type="hidden" name="booking_id" value="<%=booking.booking_id%>">
+          <input type="hidden" name="space_id" value="<%=booking.space.space_id%>">
+          <input type='submit' name="response" value="Accept">
+        </form>
+        <form action="/my_spaces/manage" method="post">
+          <input type="hidden" name="booking_id" value="<%=booking.booking_id%>">
+          <input type="hidden" name="space_id" value="<%=booking.space.space_id%>">
+          <input type='submit' name="response" value="Decline">
+        </form>
     </li>
     <%end%>
     </ul>
 
-    (list of my spaces with booking requests and accept/decline options)
+   <h2 class=headings> Confirmed Bookings </h2>
+    <ul>
+    <%@confirmed.each do |booking| %>
+    <li class="pending_bookings">
+          Space: <%=booking.space.space_name%><br>
+          Price: <%=booking.space.price%><br>
+          Booked By: <%=booking.user.name%><br>
+    </li>
+    <%end%>
+    </ul>
+
+    <h2 class=headings> Declined Bookings </h2>
+    <ul>
+    <%@declined.each do |booking| %>
+    <li class="pending_bookings">
+          Space: <%=booking.space.space_name%><br>
+          Price: <%=booking.user.name%><br>
+          Booked By: <%=booking.space.price%><br>
+    </li>
+    <%end%>
+    </ul>
 
   </body>
 </html>
