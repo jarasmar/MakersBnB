@@ -7,7 +7,7 @@ def sign_up
 end
 
 def create_new_space
-  visit '/create_space'
+  visit '/my_spaces/create_space'
   fill_in('space_name', with: 'Jara home')
   fill_in('description', with: 'Nice Cozy room')
   fill_in('price', with: 40.00)
@@ -42,6 +42,6 @@ end
 
 def book_space
   visit('/user')
-  first('.space').click_button 'book'
+  first('.space').click_button 'Book'
   click_button('confirm')
 end
