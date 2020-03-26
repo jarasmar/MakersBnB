@@ -11,8 +11,6 @@ def create_new_space
   fill_in('space_name', with: 'Jara home')
   fill_in('description', with: 'Nice Cozy room')
   fill_in('price', with: 40.00)
-  fill_in('email', with: 'myemail@test.com')
-  fill_in('password', with: 'password')
   click_button('Submit')
 end
 

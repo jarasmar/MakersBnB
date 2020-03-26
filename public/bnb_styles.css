@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+.headings {
+  font-family: 'Roboto Slab', serif;
+  font-size: 36px;
+  text-align: center
+}
+
+label {
+  font-family: 'Roboto Slab', serif;
+  display: inline-block;
+  width: 140px;
+  text-align: right;
+}
+
+.description {
+  width: 200px;
+  height: 100px;
+  position: relative;
+}
+
+.textstyle {
+  font-family: 'Roberto Slab', serif;
+  font-size:16px
+}
+
+.content {
+  max-width: 500px;
+  margin: auto;
+}
+
+.dropbtn {
+  font-family: 'Roboto Slab', serif;
+  font-size: 28px
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  font-family: 'Roboto Slab', serif;
+  font-size: 14px
+  text-align: center;
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color: orange;}

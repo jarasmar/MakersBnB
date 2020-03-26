@@ -1,29 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <title>Makers BnB</title>
+    <link rel='stylesheet' href='bnb_styles.css'>
+    <title class=headings>Makers BnB</title>
   </head>
 
+
   <body>
-    <p> Create a new Space </p>
+
+    <div class="dropdown">
+      <button class="dropbtn">Menu</button>
+        <div class="dropdown-content">
+          <a href="/book">Make a booking</a>
+          <a href="/create_space">Create a space</a>
+          <a href="/">Sign Out</a>
+        </div>
+    </div>
+    <div class=content>
+
+    <h2 class=headings> Create a new Space </h2>
+
     <form action="/create_space" method="post">
         <label for="space_name"> Name </label>
         <input type='text' name="space_name" placeholder="Name">
 
-        <label for="description"> Description </label>
-        <input type='text' name="description" placeholder="Description">
-
-        <label for="price"> Price </label>
+        <p><label for="price"> Price </label>
         <input type='text' name="price" placeholder="Price">
 
+        <p><label for="description"> Description </label>
+        <textarea class=description type='text' name="description" placeholder="Description"></textarea>
+
+
+<!--
         <label for="email"> Email </label>
         <input type='text' name="email" placeholder="Email">
 
         <label for="password"> Password </label>
-        <input type='text' name="password" placeholder="Password">
+        <input type='text' name="password" placeholder="Password"> -->
 
-        <input type="submit" value="Submit">
+        <p><input type="submit" value="Submit"></p>
     </form>
+    </div>
+
   </body>
 </html>

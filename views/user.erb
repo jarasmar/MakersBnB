@@ -2,33 +2,45 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Makers BnB</title>
+    <link rel='stylesheet' href='bnb_styles.css'>
+    <title class=headings>Makers BnB</title>
   </head>
 
   <body>
-    <h1>Welcome, <%=@user.name%>!</h1>
-    <%# <%=@user.name%>
-    <%# List of all spaces %>
-        <%# booking link button %>
 
-    <!-- <ul>
-    <%# <%spaces.each do |space| %> %>
-    <%# <li><%=space.name%> %>
-        <%# <%=space.description%> %>
-        <%# <%=space.price%> %>
-        <%# <form action="/book_space/<%=space.id%>" method="get"> %>
-            <%# <input type='submit' value="Book"> %>
-        </form>
+    <div class="dropdown">
+      <button class="dropbtn">Menu</button>
+        <div class="dropdown-content">
+          <a href="/book">Make a booking</a>
+          <a href="/create_space">Create a space</a>
+          <a href="/">Sign Out</a>
+        </div>
+    </div>
+
+    <div class=content>
+      <h1 class=headings>Welcome, <%=@user.name%>!</h1>
+    </div>
+
+    <h2 class=headings>List of all spaces</h2>
+
+    <ul>
+    <%@spaces.each do |space| %>
+    <li class="space">
+        <%=space['name']%>
+        <%=space['description']%>
+        <%=space['price']%>
+      <form action="/book_space/<%=space['space_id']%>" method="get">
+        <input type='submit' value="Book">
+      </form>
     </li>
-    <%#end%>
-    </ul> -->
+    <%end%>
+    </ul>
 
-    <%# create space - redirects to create space view %>
-    <form action="/create_space" method="get">
+    <p><form action="/create_space" method="get">
         <input type='submit' value="Create Space">
     </form>
 
-    <form action="/sign_out" method="post">
+    <p><form action="/sign_out" method="post">
         <input type='submit' name='sign_out' value="Sign Out">
     </form>
 
