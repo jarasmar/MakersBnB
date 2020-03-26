@@ -9,11 +9,13 @@
   <body>
 
     <div class="dropdown">
-      <button class="dropbtn">Menu</button>
+      <button name ='dropbtn' class="dropbtn">Menu</button>
         <div class="dropdown-content">
           <a href="/my_bookings/:user_id">Manage Bookings</a>
           <a href="/my_spaces">Manage Spaces</a>
-          <a href="/sign_out">Sign Out</a>
+          <form action='/sign_out' method='post'>
+            <input type='submit' name='sign_out' label='Sign Out'>
+          </form>
         </div>
     </div>
 

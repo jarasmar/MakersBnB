@@ -7,4 +7,3 @@ feature 'sign_in' do
     expect(page).to have_content 'Welcome, Neha Singh!'
   end
 end
-s
