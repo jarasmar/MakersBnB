@@ -1,10 +1,7 @@
-# frozen_string_literal: true
-
 require 'space'
 require 'user'
 
 describe Space do
-  # let(:user) { double(user(name: 'Jara', email: 'testemail.test.com', password: 'password')) }
 
   context '.create' do
     it 'creates a new space' do

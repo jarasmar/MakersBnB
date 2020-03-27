@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 feature 'sign_in' do
   scenario 'user can sign in' do
     sign_up_1

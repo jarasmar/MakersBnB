@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'booking'
 require './lib/user'
 require './lib/space'

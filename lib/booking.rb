@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'pg'
 require_relative 'database_connection'
 
@@ -26,22 +24,6 @@ class Booking
   def self.all
     DatabaseConnection.query('Select * FROM bookings;')
   end
-
-  # def self.my_space_bookings(user_id:, status:)
-  #   my_spaces = Space.my_spaces(user_id: user_id)
-  #   my_spaces.map do |space|
-  #     bookings = DatabaseConnection.query("SELECT * FROM bookings WHERE status = '#{status}' AND space_id = '#{space.space_id}';")
-  #     bookings.map do |booking|
-  #       Booking.new(
-  #         booking_id: booking['booking_id'],
-  #         user_id: booking['user_id'],
-  #         space_id: booking['space_id'],
-  #         date: booking['date'],
-  #         status: booking['status']
-  #       )
-  #     end
-  #   end
-  # end
 
   def self.my_space_bookings(user_id:, status:)
     bookings = DatabaseConnection.query("SELECT * FROM bookings INNER JOIN spaces ON bookings.space_id = spaces.space_id WHERE spaces.user_id = '#{user_id}' AND bookings.status = '#{status}';")

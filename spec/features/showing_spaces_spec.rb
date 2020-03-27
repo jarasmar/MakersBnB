@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 feature 'show spaces' do
   scenario 'user can see all spaces' do
     setup
