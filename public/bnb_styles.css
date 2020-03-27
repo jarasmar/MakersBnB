@@ -3,7 +3,14 @@
 .headings {
   font-family: 'Roboto Slab', serif;
   font-size: 36px;
+  position: relative;
   text-align: center
+}
+
+.subheadings {
+  font-family: 'Roboto Slab', serif;
+  font-size: 24px;
+  text-align: center;
 }
 
 label {
@@ -13,9 +20,23 @@ label {
   text-align: right;
 }
 
+/* .homepage {
+  background-image: url('london.jpg');
+  height: 270px;
+  width: 420px
+
+} */
+
+.space {
+  font-family: 'Roboto Slab', serif;
+  font-size: 14px;
+  font-weight: lighter;
+}
+
 .description {
   width: 200px;
   height: 100px;
+  display: inline-block;
   position: relative;
 }
 
