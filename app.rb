@@ -48,6 +48,23 @@ class MakersBnB < Sinatra::Base
 
   get '/user' do
     @spaces = Space.available
+    # Shows all existent spaces like in index until we choose a date
+    # No book button available (select date first)
+    erb :user
+  end
+
+  post '/user' do
+    @selected_date = params[:selected_date]
+    # Goes to spaces table
+    # and checks with every space_id in the bookings table
+    # if there is a coincidence with @selected_date
+    redirect '/user/selected_date'
+  end
+
+  get '/user/selected_date' do
+    @spaces = Space.available
+    # Shows available spaces for that date
+    # Shows book button
     erb :user
   end
 

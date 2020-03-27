@@ -23,6 +23,20 @@
       <h1 class=headings>Welcome, <%=@user.name%>!</h1>
     </div>
 
+    <h2 class=headings> Select a date: </h2>
+    <!-- in value add ruby date method for current day -->
+     <!-- ruby method that sets min as today and max as one year from now-->
+    <form action='user/selected_date' method='post'>
+      <input type="date" id="start" name="selected_date"
+             value="2020-03-27"
+             min="2020-03-27" max="2021-03-27">
+      <input type='submit' value='Submit'>
+    </form>
+
+
+
+
+
     <h2 class=headings>List of all spaces</h2>
 
     <ul>

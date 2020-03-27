@@ -57,10 +57,16 @@ get '/book_space/:id'     -->  display book_space.erb (space, confirm_booking_bu
 post '/book_space/:id'    -->  redirect to ./my_bookings/user (creates a new booking instance, save data into bookings DB)
 ```
 
----- Data for api google calendar.---- (just trying this shit.)
-Client ID
-1097043031635-u70ead24ht5kasqlgpjgbau7ddtica3b.apps.googleusercontent.com
-Client Secret
-4pBOyjT7mIwQWGxTn27TGSVW
+## DATES IMPLEMENTATION ##
+Ideally it would have a calendar and be able to book range of dates but for now we will focus on booking an specific date at a time.
 
-----------------------------------------
+- In the view user, we will ask for a date input that will display only the spaces available for that specific date.
+- Once we choose a space, we press 'book' and it will be saved in the DB as 'pending'.
+- Owner accepts your booking and the status change to 'accepted'.
+- If we search again for the same date, that space will not be shown.
+
+Technical Plan:
+- User view has a form with an input selected_date that we submit and store as a param
+- Display a new list with spaces available in selected_date: (method will map all existent spaces and with each space_id will go to bookings table and check there is not accepted bookings with each space_id for selected_date). Display those with no coincidences.
+- From the new list of available spaces we can do the booking (that will create a new booking in the table and save the selected_date)
+- Owner can accept or decline (changes status in booking as usual).
