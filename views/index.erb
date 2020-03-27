@@ -8,8 +8,9 @@
 
   <body>
     <h1 class=headings>Welcome to MakersBnB!</h1>
+    <div class=homepage>
 
-    <p>List of all spaces</p>
+    <p class=subheadings>List of all spaces</p>
     <ul>
     <%@spaces.each do |space| %>
     <li class="space">
@@ -27,6 +28,6 @@
     <form action="/sign_in" method="get">
         <input type='submit' value="Sign In">
     </form>
-
+  </div>
   </body>
 </html>
