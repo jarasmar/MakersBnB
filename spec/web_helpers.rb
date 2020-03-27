@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 def sign_up_1
   visit '/sign_up'
   fill_in('name', with: 'Neha Singh')

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 feature 'showing my spaces' do
   scenario 'user can see all their spaces' do
     setup

@@ -1,9 +1,6 @@
-# frozen_string_literal: true
-
 require 'user'
 
 describe User do
-  # let(:user) { double(user) }
 
   context '.create' do
     it 'creates a user with a name' do

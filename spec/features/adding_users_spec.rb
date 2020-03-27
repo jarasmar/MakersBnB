@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 feature 'sign up' do
   scenario 'users can sign up for MakersBnB' do
     visit '/'

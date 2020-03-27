@@ -10,6 +10,12 @@
     <h1 class=headings>Welcome to MakersBnB!</h1>
     <div class=homepage>
 
+    <% flash.keys.each do |type| %>
+      <div data-alert class="flash <%= type %> alert-box radius">
+        <%= flash[type] %>
+      </div>
+    <% end %>
+
     <p class=subheadings>List of all spaces</p>
     <ul>
     <%@spaces.each do |space| %>
