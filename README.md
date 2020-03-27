@@ -20,7 +20,7 @@ CREATE DATABASE makersbnb_test;
 To set up the appropriate tables, connect to the datatbase in `psql` and run the SQL scripts in the `db/migrations` directory in the given folder.
 
 KEY:
-Bookings Table Status column Integer - 
+Bookings Table Status column Integer -
 0 = pending
 1 = confirmed
 2 = declined
@@ -56,3 +56,5 @@ post '/my_spaces/manage'    -->  redirect to ./my_spaces/manage (modifies availa
 get '/book_space/:id'     -->  display book_space.erb (space, confirm_booking_button)
 post '/book_space/:id'    -->  redirect to ./my_bookings/user (creates a new booking instance, save data into bookings DB)
 ```
+
+----
