@@ -57,4 +57,10 @@ get '/book_space/:id'     -->  display book_space.erb (space, confirm_booking_bu
 post '/book_space/:id'    -->  redirect to ./my_bookings/user (creates a new booking instance, save data into bookings DB)
 ```
 
-----
+---- Data for api google calendar.---- (just trying this shit.)
+Client ID
+1097043031635-u70ead24ht5kasqlgpjgbau7ddtica3b.apps.googleusercontent.com
+Client Secret
+4pBOyjT7mIwQWGxTn27TGSVW
+
+----------------------------------------
