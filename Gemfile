@@ -10,5 +10,7 @@ gem 'simplecov'
 gem 'simplecov-console'
 gem 'sinatra'
 gem 'sinatra-flash'
+gem 'mailgun-ruby', '~>1.1.6'
+gem 'dotenv'
 
 # gem "rails"

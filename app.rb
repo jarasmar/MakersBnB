@@ -6,6 +6,9 @@ require './lib/database_connection_setup.rb'
 require './lib/user.rb'
 require './lib/space'
 require './lib/booking'
+require 'mailgun-ruby'
+require 'dotenv/load'
+
 
 class MakersBnB < Sinatra::Base
   enable :sessions, :method_override
@@ -27,7 +30,20 @@ class MakersBnB < Sinatra::Base
   post '/sign_up' do
     # Saves into users DB (params - Name, email, username password)
     # Update parameter names when decided
+
     User.create(name: params[:name], email: params[:email], password: params[:password])
+    # First, instantiate the Mailgun Client with your API key
+    mg_client = Mailgun::Client.new ENV['MAILGUN_API']
+    # Define your message parameters
+    message_params =  { from: 'makersbnb02@gmail.com',
+                        to:   ENV['EMAIL'],
+                        subject: 'MakersBnB Signup!',
+                        text:    "Thank you #{params[:name]} for signing up to MakersBnB!"
+                      }
+
+    # Send your message through the client
+    mg_client.send_message ENV['MAILGUN_SANDBOX'], message_params
+
     redirect '/sign_in'
   end
 
