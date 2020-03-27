@@ -1,50 +1,41 @@
-# MakersBnB
+# MakersBnB #
 
-## DESCRIPTION OF THE PROJECT.
+## DESCRIPTION OF THE PROJECT ##
 
  Create a clone app of Airbnb in Ruby. This is a group project focused on building and MPV
  utilising XP principles.
 
-## WHAT WE HAVE DONE.
+## WHAT WE HAVE DONE ##
 
  - Our app allows user to sign_up
  - Allows user to sign_in.
  - Once we are identified by the system we can create a space or book one.
- - As part of our implementation we can add a name to the space, a price and
-   a description.
+ - As part of our implementation we can add a name to the space, a price and a description.
 
-  Our user stories implementation had followed this check points:
+### Our user stories implementation had followed this check points: ###
 
-  Any signed-up user can list a new space.
-
-
+Any signed-up user can list a new space.
   - As a user, I need to sign-up.  (name, username, email, password)✅
   - As a user, I need to log-in. (username, password) ✅
   - As a user, I need to log-out.✅
   - As a Owner, I want to be able to list a new space ✅
 
+Users can list multiple spaces ✅
 
-  Users can list multiple spaces.
-  As A Owner, I want to be able to list multiple spaces.✅
-
-- Users should be able to name their space, provide a short description of the space, and a price per     night.
-- As a Owner, I want to be able to name my spaces.✅
-- As a Owner, I want to be able to be able to add a description to my spaces✅
-- As a Owner, I want to be able to add a price per night to my spaces✅
-
+As A Owner, I want to be able to list multiple spaces.✅
+  - Users should be able to name their space, provide a short description of the space, and a price per     night.
+  - As a Owner, I want to be able to name my spaces.✅
+  - As a Owner, I want to be able to be able to add a description to my spaces✅
+  - As a Owner, I want to be able to add a price per night to my spaces✅
 
 Any signed-up user can request to hire any space for one night, and this should be approved by the user that owns that space.
-- As a Client, I would like to request a space for a night.✅
-- As a Owner, I would like to be able to approve requests to stay at my space✅
-- As a Owner, I would like to be able to decline requests to stay at my space✅
-
-- Nights for which a space has already been booked should not be available for users to book that space
-- As a Client, I don't want to see rooms that have an accepted booking request for my chosen dates (not available).✅
-
-- Until a user has confirmed a booking request, that space can still be booked for that night.
-- As a client, I can make a booking request for a room with an existing booking request that has not yet been approved. (maybe available)✅
-
-
+  - As a Client, I would like to request a space for a night.✅
+  - As a Owner, I would like to be able to approve requests to stay at my space✅
+  - As a Owner, I would like to be able to decline requests to stay at my space✅
+  - Nights for which a space has already been booked should not be available for users to book that space ✅
+  - As a Client, I don't want to see rooms that have an accepted booking request for my chosen dates (not available).✅
+  - Until a user has confirmed a booking request, that space can still be booked for that night. ✅
+  - As a client, I can make a booking request for a room with an existing booking request that has not yet been approved. (maybe available)✅
 
 
 ### To set up the databases ###
@@ -63,7 +54,7 @@ Connect to `psql` and create the `makersbnb_test` database:
 CREATE DATABASE makersbnb_test;
 ```
 
-To set up the appropriate tables, connect to the datatbase in `psql` and run the SQL scripts in the `db/migrations` directory in the given folder.
+To set up the appropriate tables, connect to the database in `psql` and run the SQL scripts in the `db/migrations` directory in the given folder.
 
 KEY:
 Bookings Table Status column Integer -
@@ -74,6 +65,8 @@ Bookings Table Status column Integer -
 
 ### To run tests ###
 `rspec` from the parent directory
+
+
 ## Views Plan: ##
 
 ```
@@ -103,8 +96,7 @@ get '/book_space/:id'     -->  display book_space.erb (space, confirm_booking_bu
 post '/book_space/:id'    -->  redirect to ./my_bookings/user (creates a new booking instance, save data into bookings DB)
 ```
 
-## TEAM MEMBERS
-
+## TEAM MEMBERS ##
   - Ben Galley.
   - Neha Singh
   - Jara Santamaria Martinez.
@@ -112,9 +104,7 @@ post '/book_space/:id'    -->  redirect to ./my_bookings/user (creates a new boo
   - Rafa Hernandez.
 
 
-
-
-## LINK TO TRELLO.
+## TRELLO BOARD ##
 
  In our trello pannel is defined how our work was organised.
 
@@ -128,7 +118,7 @@ post '/book_space/:id'    -->  redirect to ./my_bookings/user (creates a new boo
   https://trello.com/b/4E76SK8e/makersbnb
 
 
-##  IDEAS TO IMPROVE OUR APPLICATION. ##
+## IDEAS TO IMPROVE OUR APPLICATION ##
 
 ## Dates implementation ##
 Ideally it would have a calendar and be able to book range of dates but for now we will focus on booking an specific date at a time.
