@@ -8,26 +8,25 @@
 
   <body>
     <h1 class=headings>Welcome to MakersBnB!</h1>
-    <div class=homepage>
+    <form  action="/sign_up" method="get">
+      <input type='submit' value="Sign Up">
+    </form>
+    <form action="/sign_in" method="get">
+      <input  type='submit' value="Sign In">
+    </form>
 
     <p class=subheadings>List of all spaces</p>
+    <!-- <div class=list> -->
     <ul>
     <%@spaces.each do |space| %>
     <li class="space">
-        <%=space['space_name']%>
+        <%=space['space_name']%>:
+        £<%=space['price']%><br>
+        <div id=descriptions>
         <%=space['description']%>
-        <%=space['price']%>
-    </li>
+        </div>
+    </li><br>
     <% end %>
     </ul>
-
-    <form action="/sign_up" method="get">
-        <input type='submit' value="Sign Up">
-    </form>
-
-    <form action="/sign_in" method="get">
-        <input type='submit' value="Sign In">
-    </form>
-  </div>
   </body>
 </html>

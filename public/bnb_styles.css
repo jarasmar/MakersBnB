@@ -1,16 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 
-.headings {
+body {
   font-family: 'Roboto Slab', serif;
+  color: black;
+  background-image: url('london2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.headings {
   font-size: 36px;
   position: relative;
-  text-align: center
+  text-align: center;
 }
 
 .subheadings {
-  font-family: 'Roboto Slab', serif;
-  font-size: 24px;
+  font-size: 28px;
   text-align: center;
+}
+
+ul li {
+  background-color: white;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  opacity: 60%;
+  border-radius: 4%;
+  padding: 5px;
+  list-style: none;
+}
+/* 
+input [type=submit] {
+  background-color: #4CAF50; 
+  border: none;  color: white;  
+  padding: 15px 32px;  
+  text-align: center;  
+  text-decoration: none;  
+  display: inline-block;   
+  font-size: 16px; 
+} */
+
+.button:hover { 
+  background-color: #4CAF50;
+  color: white; 
 }
 
 label {
@@ -20,17 +53,16 @@ label {
   text-align: right;
 }
 
-/* .homepage {
-  background-image: url('london.jpg');
-  height: 270px;
-  width: 420px
-
-} */
-
 .space {
-  font-family: 'Roboto Slab', serif;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: lighter;
+  text-align: center;
+}
+
+#descriptions {
+  font-size: 12px;
+  font-weight: lighter;
+  text-align: center;
 }
 
 .description {
@@ -40,18 +72,12 @@ label {
   position: relative;
 }
 
-.textstyle {
-  font-family: 'Roberto Slab', serif;
-  font-size:16px
-}
-
 .content {
   max-width: 500px;
   margin: auto;
 }
 
 .dropbtn {
-  font-family: 'Roboto Slab', serif;
   text-align: center;
   background-color: black;
   color: white;
@@ -66,7 +92,6 @@ label {
 }
 
 .dropdown-content {
-  font-family: 'Roboto Slab', serif;
   font-size: 14px;
   display: none;
   position: absolute;
